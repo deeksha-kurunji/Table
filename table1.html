@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=10, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            font: icon;
+            text-align: center;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td{
+            padding: 10px;
+            height: 20px;
+            text-align: left;
+        }
+        th {
+            font-weight: bold;  
+            background-color: dodgerblue;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="tabid"></div> 
+    <script>
+        var student = [{name:"Ash",regno:01,grade:"A"},
+                       {name:"John",regno:02,grade:"A+"},
+                       {name:"Jane",regno:03,grade:"A+"},
+                       {name:"Sam",regno:04,grade:"A"}];
+        var table = document.createElement("table");
+        var tabh = document.createElement("thead");
+        var row = document.createElement("tr");
+        var hed1 = document.createElement("th");
+        var hed2 = document.createElement("th");
+        var hed3 = document.createElement("th");
+
+        row.appendChild(hed1);
+        row.appendChild(hed2);
+        row.appendChild(hed3);
+        tabh.appendChild(row);
+        table.appendChild(tabh);
+        
+        document.getElementById("tabid").appendChild(table);
+
+        hed1.innerHTML= "Name";
+        hed2.innerHTML= "Reg No";
+        hed3.innerHTML= "Grade";
+
+     console.log(student.length)  ; // no of rows 
+
+       // DRAW HTML TABLE
+      row = table.insertRow();
+
+      for(var i=0; i<student.length; i++)
+      {
+        
+          var cell = row.insertCell();
+          cell.innerHTML = student[i].name;
+          var cell = row.insertCell();
+          cell.innerHTML = student[i].regno;
+          var cell = row.insertCell();
+          cell.innerHTML = student[i].grade;
+
+        
+        row = table.insertRow();
+      }
+
+    </script>
+</body>
+</html> 
